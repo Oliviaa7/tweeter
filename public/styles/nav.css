@@ -5,6 +5,8 @@ nav {
   color: #FFFFFF;
   height: 120px;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .nav-tweeter {

@@ -1,0 +1,11 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  padding: .5em;
+  background-color: #26333f;
+  background-image: url("/images/buried.png");
+}
