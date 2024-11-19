@@ -4,10 +4,10 @@ nav {
   background-color: #4055a1;
   color: #FFFFFF;
   height: 120px;
-  width: auto;
+  width: 100%;
 }
 
-span {
+.nav-tweeter {
   font-size: 30px;
   font-family: "Bungee", sans-serif;
   padding-left: 1.5em;
