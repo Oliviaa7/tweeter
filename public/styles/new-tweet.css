@@ -28,3 +28,7 @@
   font-family: "Bungee", sans-serif;
   margin-top: 10px;
 }
+
+.over-limit {
+  color: red;
+}
