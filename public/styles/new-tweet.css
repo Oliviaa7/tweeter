@@ -1,0 +1,23 @@
+#tweet-text {
+  border-style: none;
+  width: 100%;
+  background-color: #f4f1ec;
+  border-bottom: solid;
+  resize: none;
+  font-size: 18px;
+}
+
+.tweet-submit {
+  color: white;
+  background-color: #4055a1;
+  outline: none;
+  border: none;
+}
+
+.submit-counter {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  font-family: "Bungee", sans-serif;
+  margin-top: 10px;
+}

@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,7 +35,7 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    
+
     <header class="profile">
       <div>
         <img src="/images/profile-hex.png">
@@ -46,8 +48,19 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h2>Sample</h2>
-      <p>A sample for the page to see how this will work. We need a lot of text for the sample. This is my time to shine in storytelling and creative writing. What did the dog say to the cat? Perhaps just calm down, it's bedtime.</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="submit-counter">
+            <button class="tweet-submit" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
+    <footer class="bottom">
+    </footer>
   </body>
 </html>

@@ -3,10 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
   width: 100%;
   height: 400px;
   color: white;
-  padding: .5em;
   background-color: #26333f;
   background-image: url("/images/buried.png");
 }
