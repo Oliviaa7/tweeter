@@ -5,13 +5,20 @@
   border-bottom: solid;
   resize: none;
   font-size: 18px;
+  padding:5px 10px;
 }
 
 .tweet-submit {
+  padding: 5px 10px;
   color: white;
   background-color: #4055a1;
   outline: none;
   border: none;
+}
+
+.tweet-submit:hover {
+  cursor: pointer;
+  filter: brightness(80%);
 }
 
 .submit-counter {
