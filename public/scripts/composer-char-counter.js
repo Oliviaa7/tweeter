@@ -13,9 +13,9 @@ $(document).ready(() => {
     $counter.text(charsLeft);
 
     if(charsLeft < 0) {
-      $counter.addClass('over-limit');
+      $counter.addClass('counter-red');
     } else {
-      $counter.removeClass('over-limit');
+      $counter.removeClass('counter-red');
     }
 
   });
