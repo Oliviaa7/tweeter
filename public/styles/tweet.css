@@ -41,7 +41,7 @@ article.tweet footer {
   align-items: center;
   border-top: solid;
   font-size: 15px;
-  padding-top:10px;
+  padding: 10px;
 }
 
 .tweet-actions {
@@ -52,6 +52,7 @@ article.tweet footer {
 .tweet-actions i {
   font-size: 15px;
   color: #4055a1;
+  transition: color 0.3s ease;
 }
 
 .tweet-actions i:hover {
