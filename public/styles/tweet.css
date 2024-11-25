@@ -2,6 +2,7 @@ article {
   border: solid;
   padding: 10px 20px;
   z-index: 10;
+  margin: 20px;
 }
 
 article:hover {

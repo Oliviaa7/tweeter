@@ -64,26 +64,29 @@
           </div>
         </form>
       </section>
-      <article class="tweet">
-        <header>
-          <div class="user-info">
-            <img src="/images/profile-pic.png" alt="Profile Picture" id="profile-pic">
-            <span class="user-firstname">Olivia</span>
+      <section id="tweets-container"></section>
+      <template id="tweet-template">
+        <article class="tweet">
+          <header>
+            <div class="user-info">
+              <img src="" alt="Profile Picture" class="avatar">
+              <span class="user-firstname"></span>
+            </div>
+            <span class="user-handle"></span>
+          </header>
+          <div class="tweet-content">
+            <p></p>
           </div>
-          <span class="user-handle">@OliviaA</span>
-        </header>
-        <div class="tweet-content">
-          <p>The content of the tweet</p>
-        </div>
-        <footer>
-          <span class="timestamp">10 days ago</span>
-          <div class="tweet-actions">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article>
+          <footer>
+            <span class="timestamp"></span>
+            <div class="tweet-actions">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </template>
     </main>
     <footer class="bottom">
     </footer>
