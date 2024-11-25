@@ -32,7 +32,7 @@ $(document).ready(() => {
     $('#tweets-container').empty();
 
     for (const tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
 
   };
@@ -63,6 +63,7 @@ $(document).ready(() => {
           console.log('Tweet submitted successfully: ', response);
           $('#tweet-form textarea').val('');
           $('.counter').val('140');
+          loadTweets();
         })
         .fail((error) => {
           console.error('Error submitting tweet: ', error);
