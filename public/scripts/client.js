@@ -43,6 +43,18 @@ $(document).ready(() => {
     $button.on('submit', (event) => {
       event.preventDefault();
 
+      const tweetText = $('#tweet-text').val().trim();
+
+      if (!tweetText) {
+        alert('Your tweet cannot be empty.');
+        return;
+      };
+
+      if (tweetText.length > 140) {
+        alert('Your tweet is too long. Maximum allowed is 140 characters.');
+        return;
+      };
+
       const serializedData = $(event.target).serialize();
 
       $.post('../tweets', serializedData)
@@ -50,6 +62,7 @@ $(document).ready(() => {
           $('#tweets-container').append(response);
           console.log('Tweet submitted successfully: ', response);
           $('#tweet-form textarea').val('');
+          $('.counter').val('140');
         })
         .fail((error) => {
           console.error('Error submitting tweet: ', error);
