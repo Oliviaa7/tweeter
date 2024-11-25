@@ -4,33 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 $(document).ready(() => {
 
+  // A function to grab tweet data and convert it to HTML to be presented on the webpage
   const createTweetElement = function(tweet) {
 
     const { user, content, created_at } = tweet;
@@ -42,20 +18,58 @@ $(document).ready(() => {
     $template.find(".user-firstname").text(user.name);
     $template.find(".user-handle").text(user.handle);
     $template.find(".tweet-content p").html(content.text);
-    $template.find(".timestamp").text(created_at);
+
+    const timeagoStamp = timeago.format(created_at);
+
+    $template.find(".timestamp").text(timeagoStamp);
 
     return $template;
 
   };
 
+  // A function to grab the tweet data and append it to the HTML form 
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
 
     for (const tweet of tweets) {
       $('#tweets-container').append(createTweetElement(tweet));
     }
 
-  }
+  };
 
-  renderTweets(data);
+  // Event listener for Tweet submit button which will serialize the data and then use AJAX POST request to post to the /tweets endpoint. 
+  $(() => {
+    const $button = $('#tweet-form');
+    $button.on('submit', (event) => {
+      event.preventDefault();
 
+      const serializedData = $(event.target).serialize();
+
+      $.post('../tweets', serializedData)
+        .done((response) => {
+          $('#tweets-container').append(response);
+          console.log('Tweet submitted successfully: ', response);
+          $('#tweet-form textarea').val('');
+        })
+        .fail((error) => {
+          console.error('Error submitting tweet: ', error);
+          alert('Failed to submit. Please try again.');
+        })
+    })
+  });
+
+  // A function to fetch tweets from the /tweets page using AJAX GET request.
+  const loadTweets = function() {
+    $.get('../tweets')
+      .done((tweets) => {
+        console.log('Tweets retreived: ', tweets);
+        renderTweets(tweets);
+      })
+      .fail((error) => {
+        console.error('Error retreiving tweets: ', error);
+        alert('Failed to load tweets. Please try again later.');
+      })
+  };
+
+  loadTweets();
 });
