@@ -109,10 +109,13 @@ $(document).ready(() => {
 
     $button.on('click', () => {
 
-      $('.new-tweet').slideDown();
-
-      $textarea.focus();
-      $textarea.select();
+      if ($('.new-tweet').is(':visible')) {
+        $('.new-tweet').slideUp();
+      } else {
+        $('.new-tweet').slideDown();
+        $textarea.focus();
+        $textarea.select();
+      }
 
     });
 
