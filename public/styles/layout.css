@@ -36,7 +36,6 @@ body {
   flex-direction: column;
   margin: 0 auto;
   background-color: inherit;
-  gap:80px;
 }
 
 .bottom {

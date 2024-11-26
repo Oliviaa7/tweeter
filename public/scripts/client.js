@@ -45,24 +45,30 @@ $(document).ready(() => {
 
       const tweetText = $('#tweet-text').val().trim();
       
+      // Hide error messages before they are needed
       $('.error-message').slideUp();
 
+      // Display error message for no input in the tweet textarea
       if (!tweetText) {
         $('#error-empty').slideDown();
         return;
       };
 
+      // Slide error message out of the way upon next input
       $('.error-message').slideUp();
 
+        // Display error message for too long tweet
       if (tweetText.length > 140) {
         $('#error-length').slideDown();
         return;
       };
 
+      // Slide error message out of the way upon next input
       $('.error-message').slideUp();
 
       const serializedData = $(event.target).serialize();
 
+      // Send post request for valid tweet input
       $.post('../tweets', serializedData)
         .done((response) => {
           $('#tweets-container').append(response);
@@ -92,4 +98,33 @@ $(document).ready(() => {
   };
 
   loadTweets();
+
+  $('.new-tweet').slideUp();
+
+  $(() => {
+
+    const $button = $('#compose-button');
+    const $textarea = $('#tweet-text');
+    const $submitButton = $('.tweet-submit');
+
+    $button.on('click', () => {
+
+      $('.new-tweet').slideDown();
+
+      $textarea.focus();
+      $textarea.select();
+
+    });
+
+    $textarea.on('keydown', (event) => {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        $submitButton.click();
+      } 
+      else if (event.key === 'Enter' && event.shiftKey);
+    });
+
+  });
+
+
 });
