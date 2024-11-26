@@ -32,3 +32,10 @@
 .counter-red {
   color: red;
 }
+
+.error-message {
+  display: none;
+  color: red;
+  font-size: 0.9rem;
+  margin: 5px;
+}

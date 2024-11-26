@@ -59,6 +59,14 @@
         <form method="POST" action="/tweets/" id="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
+          <div class="error-message" id="error-empty">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Your tweet cannot be empty.
+          </div>
+          <div class="error-message" id="error-length">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Your tweet is too long. It cannot exceed 140 characters.
+          </div>
           <div class="submit-counter">
             <button class="tweet-submit" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>

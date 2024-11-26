@@ -17,7 +17,7 @@ $(document).ready(() => {
     $template.find(".avatar").attr("alt", `${user.avatars}'s avatar`);
     $template.find(".user-firstname").text(user.name);
     $template.find(".user-handle").text(user.handle);
-    $template.find(".tweet-content p").html(content.text);
+    $template.find(".tweet-content p").text(content.text);
 
     const timeagoStamp = timeago.format(created_at);
 
@@ -44,16 +44,22 @@ $(document).ready(() => {
       event.preventDefault();
 
       const tweetText = $('#tweet-text').val().trim();
+      
+      $('.error-message').slideUp();
 
       if (!tweetText) {
-        alert('Your tweet cannot be empty.');
+        $('#error-empty').slideDown();
         return;
       };
 
+      $('.error-message').slideUp();
+
       if (tweetText.length > 140) {
-        alert('Your tweet is too long. Maximum allowed is 140 characters.');
+        $('#error-length').slideDown();
         return;
       };
+
+      $('.error-message').slideUp();
 
       const serializedData = $(event.target).serialize();
 
