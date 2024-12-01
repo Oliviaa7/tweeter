@@ -1,18 +1,19 @@
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: #4055a1;
+  background-color: #26333f;
+  background-image: url("/images/buried.png");
   color: #FFFFFF;
-  height: 120px;
+  height: 100px;
   width: 100%;
   position: fixed;
   top: 0;
 }
 
 .nav-tweeter {
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Bungee", sans-serif;
-  padding-left: 1.5em;
+  padding-left: 1em;
   margin-bottom: 20px;
   align-self: flex-end;
 }
@@ -20,7 +21,7 @@ nav {
 .within-nav {
   display: flex;
   flex-direction: column;
-  padding-right: 1.5em;
+  padding-right: 1em;
   align-items: center;
   align-self: flex-end;
   margin-bottom: 20px;
@@ -39,6 +40,7 @@ nav {
   background-color: inherit;
   border: none;
   margin: 2px;
+  color: white;
 }
 
 .compose-tweet:hover {
@@ -59,4 +61,11 @@ nav {
 
 .compose-tweet:hover + .bounce-icon {
   animation: bounce 0.8s ease infinite;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4055a1;
+    background-image: none;
+  }
 }

@@ -42,6 +42,7 @@
       </div>
     </nav>
 
+    <!-- Profile section of webpage -->
     <header class="profile">
       <div>
         <img src="/images/profile-hex.png">
@@ -54,10 +55,11 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <!-- Section for composing and posting a new tweet. Can be hidden via the "Write a new tweet" button. -->
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/" id="tweet-form">
-          <label for="tweet-text">What are you humming about?</label>
+          <label for="tweet-text" class="tweet-label">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="error-message" id="error-empty">
             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -73,9 +75,13 @@
           </div>
         </form>
       </section>
+
+      <!-- Section for posted tweets with time since tag and reblog, like and flag buttons -->
       <section id="tweets-container"></section>
+      
       <template id="tweet-template">
         <article class="tweet">
+
           <header>
             <div class="user-info">
               <img src="" alt="Profile Picture" class="avatar">
@@ -83,9 +89,11 @@
             </div>
             <span class="user-handle"></span>
           </header>
+
           <div class="tweet-content">
             <p></p>
           </div>
+
           <footer>
             <span class="timestamp"></span>
             <div class="tweet-actions">
@@ -94,10 +102,8 @@
               <i class="fa-solid fa-heart"></i>
             </div>
           </footer>
-        </article>
+        </article>        
       </template>
     </main>
-    <footer class="bottom">
-    </footer>
   </body>
 </html>
