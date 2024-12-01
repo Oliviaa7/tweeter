@@ -101,6 +101,8 @@ $(document).ready(() => {
 
   $('.new-tweet').slideUp();
 
+
+  // Event listener for "Write a new tweet" at top of page, when clicked either slides new tweet textarea down or back up.
   $(() => {
 
     const $button = $('#compose-button');
@@ -119,6 +121,7 @@ $(document).ready(() => {
 
     });
 
+    // Enable a tweet to be submitted with pressing enter
     $textarea.on('keydown', (event) => {
       if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
@@ -127,6 +130,40 @@ $(document).ready(() => {
       else if (event.key === 'Enter' && event.shiftKey);
     });
 
+  });
+
+  // Event listener for "Scroll to top" button
+  $(() => {
+
+    const $scrollButton = $('.scroll-up');
+    const $button = $('#compose-button');
+    const $textarea = $('#tweet-text');
+    const $navBar = $('nav');
+
+    $scrollButton.hide();
+
+    // Show scroll to top button upon scrolling
+    $(window).on("scroll", () => {
+      if ($(window).scrollTop() > 100) {
+        $scrollButton.fadeIn();
+        $button.fadeOut();
+        $navBar.addClass('transparent');
+      } else {
+        $scrollButton.fadeOut();
+        $button.fadeIn();
+        $navBar.removeClass('transparent');
+      }
+    });
+
+    // Scroll to top upon clicking button and show tweet area with automatic focus on it
+    $scrollButton.on("click", () => {
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+      if (!$('.new-tweet').is(':visible')) {
+        $('.new-tweet').slideDown();
+      }
+      $textarea.focus();
+      $textarea.select();
+    });
   });
 
 
