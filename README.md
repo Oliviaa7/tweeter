@@ -4,7 +4,7 @@ Tweeter is a simple, single-page Twitter clone. It is AJAX-based and uses HTML5,
 
 ### Purpose
 
-This project was built off of a Lighthouse Labs repository for the purposes of learning front-end development. 
+This project was built off of a Lighthouse Labs repository for the purpose of learning front-end development. 
 
 ## Final Product
 
