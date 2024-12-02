@@ -24,7 +24,7 @@ This shows the feed in the tablet view.
 
 ## Getting Started
 
-1. Clone the repository onto your local device: git clone https://github.com/Oliviaa7/tweeter.git
+1. Clone the repository onto your local device: `git clone https://github.com/Oliviaa7/tweeter.git`
 3. Install dependencies: `npm install`.
 3. Start the web server: `npm run local`. 
 4. Go to [http://localhost:8080/](http://localhost:8080/) in your browser.
