@@ -14,10 +14,12 @@ This shows the style for error messages when a tweet either exceeds the characte
 
 ### Tablet View
 !["Screenshot of Tweeter for tablet sized screens](https://github.com/Oliviaa7/tweeter/blob/master/docs/tweeter-tablet.png?raw=true)
+
 The app adjusts for tablet and phone sized screens appropriately via responsive design.
 
 ### Tweet Feed - Tablet View
 !["Screenshot of tweets within the tablet view"](https://github.com/Oliviaa7/tweeter/blob/master/docs/tweets.png?raw=true)
+
 This shows the feed in the tablet view. 
 
 ## Getting Started
