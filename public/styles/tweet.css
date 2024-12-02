@@ -59,5 +59,6 @@ article.tweet footer {
 
 .tweet-actions i:hover {
   color:gold;
-  filter: brightness(85%)
+  filter: brightness(85%);
+  cursor: pointer;
 }

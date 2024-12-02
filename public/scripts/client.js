@@ -27,7 +27,7 @@ $(document).ready(() => {
 
   };
 
-  // A function to grab the tweet data and append it to the HTML form 
+  // A function to grab the tweet data and append it to the HTML form
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
 
@@ -37,7 +37,7 @@ $(document).ready(() => {
 
   };
 
-  // Event listener for Tweet submit button which will serialize the data and then use AJAX POST request to post to the /tweets endpoint. 
+  // Event listener for Tweet submit button which will serialize the data and then use AJAX POST request to post to the /tweets endpoint.
   $(() => {
     const $button = $('#tweet-form');
     $button.on('submit', (event) => {
@@ -52,16 +52,16 @@ $(document).ready(() => {
       if (!tweetText) {
         $('#error-empty').slideDown();
         return;
-      };
+      }
 
       // Slide error message out of the way upon next input
       $('.error-message').slideUp();
 
-        // Display error message for too long tweet
+      // Display error message for too long tweet
       if (tweetText.length > 140) {
         $('#error-length').slideDown();
         return;
-      };
+      }
 
       // Slide error message out of the way upon next input
       $('.error-message').slideUp();
@@ -80,8 +80,8 @@ $(document).ready(() => {
         .fail((error) => {
           console.error('Error submitting tweet: ', error);
           alert('Failed to submit. Please try again.');
-        })
-    })
+        });
+    });
   });
 
   // A function to fetch tweets from the /tweets page using AJAX GET request.
@@ -94,7 +94,7 @@ $(document).ready(() => {
       .fail((error) => {
         console.error('Error retreiving tweets: ', error);
         alert('Failed to load tweets. Please try again later.');
-      })
+      });
   };
 
   loadTweets();
@@ -126,8 +126,7 @@ $(document).ready(() => {
       if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
         $submitButton.click();
-      } 
-      else if (event.key === 'Enter' && event.shiftKey);
+      } else if (event.key === 'Enter' && event.shiftKey);
     });
 
   });
