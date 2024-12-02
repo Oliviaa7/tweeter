@@ -8,7 +8,13 @@ This project was built off of a Lighthouse Labs repository for the purposes of l
 
 ## Final Product
 
+!["Screenshot of Tweeter main page"](https://github.com/Oliviaa7/tweeter/blob/master/docs/tweeter.png?raw=true)
 
+!["Screenshot of Tweeter error"](https://github.com/Oliviaa7/tweeter/blob/master/docs/tweeter-error.png?raw=true)
+
+!["Screenshot of Tweeter for tablet sized screens](https://github.com/Oliviaa7/tweeter/blob/master/docs/tweeter-tablet.png?raw=true)
+
+!["Screenshot of tweets within the tablet view"](https://github.com/Oliviaa7/tweeter/blob/master/docs/tweets.png?raw=true)
 
 ## Getting Started
 
